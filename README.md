@@ -24,7 +24,6 @@ This project is built using the following core technologies:
 | Category | Technology |
 | :--- | :--- |
 | **Frontend** | HTML5, CSS3, JavaScript |
-| **Framework/Library** | React.js / (Mention specific CSS framework if used, e.g., Tailwind CSS, Bootstrap) |
 | **Styling** | Custom CSS / SASS |
 | **Deployment** | Netlify |
 

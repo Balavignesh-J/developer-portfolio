@@ -58,6 +58,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-**Balavignesh J** - [[Your Email Address](balav3230@gmail.com)] - [[Your LinkedIn Profile URL](https://www.linkedin.com/in/bala-vignesh-j/)]
+**Balavignesh J** - [[Email Address](mailto:balav3230@gmail.com)] - [[LinkedIn Profile URL](https://www.linkedin.com/in/bala-vignesh-j/)]
 
 Project Link: [https://github.com/Balavignesh-J/developer-portfolio](https://github.com/Balavignesh-J/developer-portfolio)

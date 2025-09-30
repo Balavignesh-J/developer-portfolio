@@ -1,377 +1,303 @@
-// DOM Elements
-const themeToggle = document.getElementById('theme-toggle');
-const navHamburger = document.getElementById('nav-hamburger');
-const navMenu = document.getElementById('nav-menu');
-const navbar = document.getElementById('navbar');
-const contactForm = document.getElementById('contact-form');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+// Portfolio Website JavaScript
 
-// Theme Management
-class ThemeManager {
-    constructor() {
-        this.currentTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        this.init();
-    }
-
-    init() {
-        this.setTheme(this.currentTheme);
-        themeToggle.addEventListener('click', () => this.toggleTheme());
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to 'light'
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-color-scheme', savedTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = html.getAttribute('data-color-scheme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         
-        // Update theme icon
-        this.updateThemeIcon();
-    }
+        html.setAttribute('data-color-scheme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
-    setTheme(theme) {
-        document.documentElement.setAttribute('data-color-scheme', theme);
-        localStorage.setItem('theme', theme);
-        this.currentTheme = theme;
-        this.updateThemeIcon();
-    }
-
-    toggleTheme() {
-        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
-        this.setTheme(newTheme);
-    }
-
-    updateThemeIcon() {
-        const themeIcon = document.querySelector('.theme-icon');
-        themeIcon.textContent = this.currentTheme === 'light' ? '🌙' : '☀️';
-    }
-}
-
-// Navigation Management
-class NavigationManager {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        // Mobile menu toggle
-        navHamburger.addEventListener('click', () => this.toggleMobileMenu());
-        
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => this.closeMobileMenu());
-        });
-
-        // Smooth scrolling for anchor links
-        this.initSmoothScrolling();
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => this.handleNavbarScroll());
-
-        // Close mobile menu on outside click
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !navHamburger.contains(e.target)) {
-                this.closeMobileMenu();
-            }
-        });
-    }
-
-    toggleMobileMenu() {
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    mobileMenuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
-        navHamburger.classList.toggle('active');
-    }
+        mobileMenuToggle.classList.toggle('active');
+    });
 
-    closeMobileMenu() {
-        navMenu.classList.remove('active');
-        navHamburger.classList.remove('active');
-    }
-
-    initSmoothScrolling() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+    // Close mobile menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
         });
-    }
+    });
 
-    handleNavbarScroll() {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(var(--color-surface-rgb, 255, 255, 253), 0.98)';
-            navbar.style.boxShadow = 'var(--shadow-md)';
-        } else {
-            navbar.style.background = 'rgba(var(--color-surface-rgb, 255, 255, 253), 0.95)';
-            navbar.style.boxShadow = 'none';
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
         }
-    }
-}
+    });
 
-// Project Filter Management
-class ProjectFilter {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => this.handleFilter(e));
+    // Smooth scrolling for navigation links (additional enhancement)
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
-    }
+    });
 
-    handleFilter(e) {
-        const filterValue = e.target.getAttribute('data-filter');
-        
-        // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
+    // Active navigation link highlighting
+    function updateActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100; // Offset for navbar
 
-        // Filter projects
-        projectCards.forEach(card => {
-            if (filterValue === 'all') {
-                card.classList.remove('hidden');
-            } else {
-                const category = card.getAttribute('data-category');
-                if (category === filterValue) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active class from all nav links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Add active class to current nav link
+                if (navLink) {
+                    navLink.classList.add('active');
                 }
             }
         });
     }
-}
 
-// Contact Form Management
-class ContactForm {
-    constructor() {
-        this.init();
-    }
+    // Add scroll event listener for active nav link highlighting
+    window.addEventListener('scroll', updateActiveNavLink);
 
-    init() {
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => this.handleSubmit(e));
-        }
-    }
-
-    handleSubmit(e) {
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Get form data
         const formData = new FormData(contactForm);
         const name = formData.get('name');
         const email = formData.get('email');
-        const subject = formData.get('subject');
         const message = formData.get('message');
-
+        
         // Basic validation
-        if (!this.validateForm(name, email, subject, message)) {
+        if (!name || !email || !message) {
+            showNotification('Please fill in all fields.', 'error');
             return;
         }
-
-        // Simulate form submission
-        this.showSubmissionFeedback();
+        
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Simulate form submission (in real app, you'd send to server)
+        showNotification('Thank you! Your message has been sent.', 'success');
         contactForm.reset();
-    }
+    });
 
-    validateForm(name, email, subject, message) {
-        if (!name.trim()) {
-            this.showError('Please enter your name');
-            return false;
-        }
-
-        if (!this.isValidEmail(email)) {
-            this.showError('Please enter a valid email address');
-            return false;
-        }
-
-        if (!subject.trim()) {
-            this.showError('Please enter a subject');
-            return false;
-        }
-
-        if (!message.trim()) {
-            this.showError('Please enter a message');
-            return false;
-        }
-
-        return true;
-    }
-
-    isValidEmail(email) {
+    // Email validation helper function
+    function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    showError(message) {
-        // Remove existing alerts
-        const existingAlert = document.querySelector('.form-alert');
-        if (existingAlert) {
-            existingAlert.remove();
+    // Notification system
+    function showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
         }
 
-        // Create and show error alert
-        const alert = document.createElement('div');
-        alert.className = 'form-alert status status--error';
-        alert.textContent = message;
-        alert.style.marginBottom = 'var(--space-16)';
-        
-        contactForm.insertBefore(alert, contactForm.firstChild);
-        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification status--${type}`;
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 16px 20px;
+            border-radius: 8px;
+            color: var(--color-${type});
+            background: rgba(var(--color-${type}-rgb), 0.1);
+            border: 1px solid rgba(var(--color-${type}-rgb), 0.25);
+            font-weight: 500;
+            z-index: 9999;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+            word-wrap: break-word;
+        `;
+        notification.textContent = message;
+
+        // Add to DOM
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
         // Auto remove after 5 seconds
         setTimeout(() => {
-            alert.remove();
-        }, 5000);
-    }
-
-    showSubmissionFeedback() {
-        // Remove existing alerts
-        const existingAlert = document.querySelector('.form-alert');
-        if (existingAlert) {
-            existingAlert.remove();
-        }
-
-        // Create and show success alert
-        const alert = document.createElement('div');
-        alert.className = 'form-alert status status--success';
-        alert.textContent = 'Thank you for your message! I\'ll get back to you soon.';
-        alert.style.marginBottom = 'var(--space-16)';
-        
-        contactForm.insertBefore(alert, contactForm.firstChild);
-        
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            alert.remove();
-        }, 5000);
-    }
-}
-
-// Scroll Animation Observer
-class ScrollAnimations {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        // Create intersection observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
                 }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        const animatedElements = document.querySelectorAll('.skill-category, .achievement-card, .project-card, .profile-card');
-        animatedElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
+            }, 300);
+        }, 5000);
     }
-}
 
-// Utility Functions
-const utils = {
-    // Debounce function for performance
-    debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    },
+    // Scroll animations for cards (intersection observer)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-    // Get current section for navigation highlighting
-    getCurrentSection() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 100;
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
 
-        for (let section of sections) {
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
+    // Observe all cards for animation
+    const animatedElements = document.querySelectorAll('.skill-category, .certification-card, .project-card, .profile-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 
-            if (scrollPos >= top && scrollPos <= bottom) {
-                return section.id;
+    // Navbar background on scroll
+    const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add/remove scrolled class based on scroll position
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // Add CSS for scrolled navbar state
+    const style = document.createElement('style');
+    style.textContent = `
+        .navbar.scrolled {
+            background: rgba(var(--color-surface-rgb, 255, 255, 255), 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .nav-link.active {
+            color: var(--color-primary);
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .navbar.scrolled {
+                background: rgba(38, 40, 40, 0.95);
             }
         }
-        return '';
-    }
-};
-
-// Navigation Highlight on Scroll
-function updateNavigationHighlight() {
-    const currentSection = utils.getCurrentSection();
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${currentSection}`) {
-            link.style.color = 'var(--color-primary)';
-            link.style.background = 'var(--color-secondary)';
-        } else {
-            link.style.color = 'var(--color-text)';
-            link.style.background = 'transparent';
+        
+        [data-color-scheme="dark"] .navbar.scrolled {
+            background: rgba(38, 40, 40, 0.95);
         }
-    });
-}
+        
+        [data-color-scheme="light"] .navbar.scrolled {
+            background: rgba(255, 255, 253, 0.95);
+        }
+    `;
+    document.head.appendChild(style);
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize managers
-    new ThemeManager();
-    new NavigationManager();
-    new ProjectFilter();
-    new ContactForm();
-    new ScrollAnimations();
+    // Initialize active nav link on page load
+    updateActiveNavLink();
 
-    // Add scroll listener for navigation highlighting
-    const debouncedHighlight = utils.debounce(updateNavigationHighlight, 100);
-    window.addEventListener('scroll', debouncedHighlight);
-
-    // Add loading animation to body
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.3s ease';
-    
-    // Fade in page after load
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '1';
+    // Add smooth hover effects for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
 
-    console.log('Portfolio loaded successfully! 🚀');
-});
-
-// Handle window resize for responsive adjustments
-window.addEventListener('resize', utils.debounce(() => {
-    // Close mobile menu on resize to desktop
-    if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        navHamburger.classList.remove('active');
+    // Add typing effect for the main title (optional enhancement)
+    const mainTitle = document.querySelector('.intro-text h1');
+    if (mainTitle) {
+        const text = mainTitle.textContent;
+        mainTitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                mainTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        // Start typing effect after a small delay
+        setTimeout(typeWriter, 1000);
     }
-}, 250));
-
-// Error handling for any uncaught errors
-window.addEventListener('error', (e) => {
-    console.error('An error occurred:', e.error);
 });
 
-// Export for potential external use
-window.PortfolioApp = {
-    ThemeManager,
-    NavigationManager,
-    ProjectFilter,
-    ContactForm,
-    ScrollAnimations,
-    utils
-};
+// Utility function to handle external links
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.hasAttribute('target') && e.target.getAttribute('target') === '_blank') {
+        // Add a small delay to ensure the link opens properly
+        setTimeout(() => {
+            console.log('External link opened:', e.target.href);
+        }, 100);
+    }
+});
+
+// Add keyboard navigation support
+document.addEventListener('keydown', function(e) {
+    // Press 'T' to toggle theme
+    if (e.key.toLowerCase() === 't' && !e.target.matches('input, textarea')) {
+        document.getElementById('theme-toggle').click();
+    }
+    
+    // Press 'Escape' to close mobile menu
+    if (e.key === 'Escape') {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        navMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+    }
+});

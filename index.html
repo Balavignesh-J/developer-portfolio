@@ -1,238 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-color-scheme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Johnson - Full Stack Web Developer</title>
+    <title>John Developer - Full Stack Web Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="brand-text">Portfolio</span>
-            </div>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#coding-profiles" class="nav-link">Coding Profiles</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://drive.google.com/file/d/1ABC123DEF456GHI789JKL/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn--primary nav-resume">Resume</a>
-            </div>
-            
-            <div class="nav-controls">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <h2>Balavignesh J</h2>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#intro" class="nav-link">Home</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#coding-profiles" class="nav-link">Coding Profiles</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="./certificates.html" class="nav-link">Certifications</a>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="./resume.pdf" download class="btn btn--primary nav-resume">Resume</a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon theme-icon--light">☀️</span>
+                        <span class="theme-icon theme-icon--dark">🌙</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Alex Johnson</h1>
-                <h2 class="hero-subtitle">Full Stack Web Developer</h2>
-                <p class="hero-description">Building innovative web solutions with modern technologies</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn--primary btn--lg">Get In Touch</a>
-                    <a href="#projects" class="btn btn--outline btn--lg">View Work</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate developer with expertise in modern web technologies</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a dedicated Full Stack Web Developer with a passion for creating efficient, scalable, and user-friendly web applications. With expertise spanning frontend and backend technologies, I bring ideas to life through clean code and innovative solutions.</p>
-                    <p>My journey in web development has led me to master various technologies including React, Node.js, Python, and modern databases. I enjoy tackling complex problems and continuously learning new technologies to stay at the forefront of web development.</p>
-                    <p>When I'm not coding, you can find me contributing to open-source projects, participating in hackathons, or exploring the latest trends in technology and design.</p>
+            <div class="intro-content" style="display: flex;justify-content: space-between;gap: 100px;">
+                <div class="intro-text">
+                    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=4000&pause=500&width=435&lines=Front-end+Developer;React+%26+Django+Enthusiast;DSA+in+Python+Lover;Frontend%2C+Backend%2C+Algorithms;Always+Learning%2C+Always+Building" alt="Typing SVG" width="500px"/>
+                    <p class="intro-bio">Passionate full-stack developer with expertise in modern web technologies. I create scalable, user-friendly applications with clean, efficient code.</p>
+                    <div class="intro-actions">
+                        <a href="#projects" class="btn btn--primary">View My Work</a>
+                        <a href="#contact" class="btn btn--outline">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <div class="developer-avatar">
+                        <div class="avatar-placeholder"><img src="/img/profile.jpg" alt="profile" class="profile-img"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with to build amazing web experiences</p>
-            </div>
+            <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3 class="skill-category-title">Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Vue.js</span>
-                        <span class="skill-item">Bootstrap</span>
-                        <span class="skill-item">Tailwind CSS</span>
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 class="skill-category-title">Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Django</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">PHP</span>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Django Rest Framework</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">MySQL</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 class="skill-category-title">Database</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">Firebase</span>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">DSA</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 class="skill-category-title">Tools & Others</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">VS Code</span>
-                        <span class="skill-item">IntelliJ</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Heroku</span>
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">My SQL Workbench</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section" style="display: none;">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Achievements</h2>
-                <p class="section-subtitle">Milestones and accomplishments in my developer journey</p>
-            </div>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3 class="achievement-title">Hackathon Winner</h3>
-                    <p class="achievement-description">First place in inter-college coding competition</p>
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">🎓</div>
+                    <h3>AWS Certified Developer</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <p class="cert-date">2024</p>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">💻</div>
-                    <h3 class="achievement-title">Open Source Contributor</h3>
-                    <p class="achievement-description">Active contributor to multiple GitHub projects</p>
+                <div class="certification-card">
+                    <div class="cert-icon">⚛️</div>
+                    <h3>React Developer Certification</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <p class="cert-date">2023</p>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">📜</div>
-                    <h3 class="achievement-title">Certification</h3>
-                    <p class="achievement-description">Full Stack Web Development Certification</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">🎯</div>
-                    <h3 class="achievement-title">Project Lead</h3>
-                    <p class="achievement-description">Led development of agricultural voice assistance system</p>
+                <div class="certification-card">
+                    <div class="cert-icon">💻</div>
+                    <h3>Full Stack Web Development</h3>
+                    <p class="cert-issuer">freeCodeCamp</p>
+                    <p class="cert-date">2023</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A showcase of my latest work and technical expertise</p>
-            </div>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Application</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-            </div>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card" data-category="web">
-                    <div class="project-content">
-                        <h3 class="project-title">Vaani Sahayak - Agricultural Voice Assistant</h3>
-                        <p class="project-description">Voice-first web application for Indian farmers with bilingual support</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Voice Recognition</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://vaani-sahayak.netlify.app" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                            <a href="https://github.com/alexjohnson/vaani-sahayak" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">🛒</div>
                     </div>
-                </div>
-                <div class="project-card" data-category="fullstack">
                     <div class="project-content">
-                        <h3 class="project-title">E-commerce Platform</h3>
-                        <p class="project-description">Full-stack e-commerce solution with payment integration</p>
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard</p>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Stripe API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://ecommerce-demo.herokuapp.com" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                            <a href="https://github.com/alexjohnson/ecommerce-platform" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://github.com/username/ecommerce" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://demo-ecommerce.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="frontend">
-                    <div class="project-content">
-                        <h3 class="project-title">Portfolio Website</h3>
-                        <p class="project-description">Responsive portfolio with dark/light mode support</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Bootstrap</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://alexjohnson.dev" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                            <a href="https://github.com/alexjohnson/portfolio" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">📋</div>
                     </div>
-                </div>
-                <div class="project-card" data-category="backend">
                     <div class="project-content">
-                        <h3 class="project-title">REST API Service</h3>
-                        <p class="project-description">RESTful API with authentication and database integration</p>
+                        <h3>Task Management App</h3>
+                        <p>Collaborative project management tool with real-time updates and team collaboration features</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express.js</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Socket.io</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://api-docs.alexjohnson.dev" class="project-link" target="_blank" rel="noopener noreferrer">API Docs</a>
-                            <a href="https://github.com/alexjohnson/rest-api-service" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://github.com/username/taskapp" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://demo-taskapp.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">🌤️</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Dashboard</h3>
+                        <p>Interactive weather application with location-based forecasts and beautiful data visualizations</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Weather API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/username/weather" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://demo-weather.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -241,81 +207,81 @@
     </section>
 
     <!-- Coding Profiles Section -->
-    <section id="coding-profiles" class="coding-profiles">
+    <section id="coding-profiles" class="coding-profiles-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Coding Profiles</h2>
-                <p class="section-subtitle">My competitive programming journey and achievements</p>
-            </div>
+            <h2 class="section-title">Coding Profiles</h2>
             <div class="profiles-grid">
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-logo">LC</div>
-                        <h3 class="profile-name">LeetCode</h3>
+                        <div class="profile-icon"><img src="/img/logo/leetcode.png" width="60" height="60" alt="logo"></div>
+                        <h3>LeetCode</h3>
                     </div>
                     <div class="profile-stats">
                         <div class="stat">
-                            <span class="stat-number">150+</span>
+                            <span class="stat-number">100+</span>
                             <span class="stat-label">Problems Solved</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">Top 20%</span>
-                            <span class="stat-label">Ranking</span>
+                        <!-- <div class="stat">
+                            <span class="stat-number">1850</span>
+                            <span class="stat-label">Contest Rating</span>
                         </div>
+                        <div class="stat">
+                            <span class="stat-badge status--success">Expert</span>
+                            <span class="stat-label">Rank</span>
+                        </div> -->
                     </div>
-                    <a href="https://leetcode.com/alexjohnson_dev" target="_blank" rel="noopener noreferrer" class="btn btn--outline profile-link">View Profile</a>
+                    <a href="https://leetcode.com/u/Balavignesh__J/" target="_blank" class="btn btn--outline btn--full-width">View Profile</a>
                 </div>
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-logo">GFG</div>
-                        <h3 class="profile-name">GeeksforGeeks</h3>
+                        <div class="profile-icon"><img src="/img/logo/gfg.png" width="50" height="50" alt="logo"></div>
+                        <h3>GeeksforGeeks</h3>
                     </div>
                     <div class="profile-stats">
                         <div class="stat">
-                            <span class="stat-number">200+</span>
+                            <span class="stat-number">100+</span>
                             <span class="stat-label">Problems Solved</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">Expert</span>
-                            <span class="stat-label">Rank</span>
+                        <!-- <div class="stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Articles Published</span>
                         </div>
+                        <div class="stat">
+                            <span class="stat-badge status--warning">5 Star</span>
+                            <span class="stat-label">Rank</span>
+                        </div> -->
                     </div>
-                    <a href="https://auth.geeksforgeeks.org/user/alexjohnson_dev" target="_blank" rel="noopener noreferrer" class="btn btn--outline profile-link">View Profile</a>
+                    <a href="https://www.geeksforgeeks.org/user/balav5kwh/" target="_blank" class="btn btn--outline btn--full-width">View Profile</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's discuss your next project or collaboration opportunity</p>
-            </div>
+            <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>alex.johnson@example.com</p>
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and interesting projects. Feel free to reach out!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>balav3230@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>+91 9080238633</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Vellore, TamilNadu</span>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="contact-social">
-                        <h4>Follow Me</h4>
-                        <div class="social-links">
-                            <a href="https://github.com/alexjohnson-dev" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-                            <a href="https://linkedin.com/in/alexjohnson-dev" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-                            <a href="https://twitter.com/alexjohnson_dev" target="_blank" rel="noopener noreferrer" class="social-link">Twitter</a>
-                        </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Balavignesh-J" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://www.linkedin.com/in/bala-vignesh-j/" target="_blank" class="social-link">LinkedIn</a>
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
@@ -328,12 +294,8 @@
                         <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
                 </form>
@@ -344,10 +306,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Alex Johnson. All rights reserved.</p>
-                <p>Built with ❤️ using HTML, CSS & JavaScript</p>
-            </div>
+            <p>&copy; 2025 Balavignesh Developer. All rights reserved.</p>
         </div>
     </footer>
 

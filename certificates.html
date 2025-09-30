@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certifications with Navbar</title>
+    <style>
+        body {
+            background: #1c232b;
+            color: #f3f7fa;
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background: #232e39;
+            padding: 12px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #bbc2ca;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: #2ec4b6;
+            color: #fff;
+            outline: none;
+        }
+
+        nav a.certificates-link {
+            background: #2ec4b6;
+            color: #fff;
+        }
+
+        nav a.certificates-link:hover {
+            background: #28a79f;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 48px 0 36px;
+            letter-spacing: 1px;
+            color: #2ec4b6;
+        }
+
+        /* Certifications Grid & Card */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            max-width: 1080px;
+            margin: 0 auto 60px auto;
+            padding: 0 16px;
+        }
+
+        .certification-card {
+            background: #232e39;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(34, 197, 94, 0.12);
+            padding: 32px 20px;
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-4px) scale(1.025);
+            box-shadow: 0 10px 32px rgba(34, 197, 94, 0.18);
+        }
+
+        .cert-img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 18px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: #17181c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+        }
+
+        .cert-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2ec4b6;
+            text-align: center;
+        }
+
+        .cert-issuer,
+        .cert-date {
+            font-size: 0.95rem;
+            color: #bbc2ca;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+        /* Platform Sections Styling */
+        section.platform-section {
+            max-width: 900px;
+            margin: 0 auto 72px auto;
+            padding: 0 16px;
+        }
+
+        section.platform-section p {
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 12px auto 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .certification-card {
+                padding: 18px;
+            }
+
+            .cert-img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin: 36px 0 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#nptel">Nptel</a></li>
+            <li><a href="#linkedin-learning">LinkedIn Learning</a></li>
+            <li><a href="#naan-mudhalvan">Naan Mudhalvan</a></li>
+            <li><a href="#infosys-springboard">Infosys Springboard</a></li>
+            <li><a href="https://drive.google.com/drive/folders/your-gdrive-certificates-folder-id" target="_blank"
+                    class="certificates-link" rel="noopener noreferrer">Certificates</a></li>
+        </ul>
+    </nav>
+
+    <section id="nptel" class="platform-section">
+        <h2 class="section-title">Nptel Certifications</h2>
+        <p>This section can include all your Nptel certificates details or embedded cards.</p>
+    </section>
+
+    <section id="linkedin-learning" class="platform-section">
+        <h2 class="section-title">LinkedIn Learning Certifications</h2>
+        <p>This section can host your LinkedIn Learning certificates with relevant details and images.</p>
+        <div class="certification-card">
+            <img class="cert-img" src="certificate-image.png" alt="Certificate Name" />
+            <div class="cert-name">Certificate Name</div>
+            <div class="cert-issuer">Issuer Name</div>
+            <div class="cert-date">Year</div>
+        </div>
+    </section>
+
+    <section id="naan-mudhalvan" class="platform-section">
+        <h2 class="section-title">Naan Mudhalvan Certifications</h2>
+        <p>Highlight your Naan Mudhalvan certificates here with images or descriptions.</p>
+    </section>
+
+    <section id="infosys-springboard" class="platform-section">
+        <h2 class="section-title">Infosys Springboard Certifications</h2>
+        <p>Display your Infosys Springboard certifications, badges, or achievements in this section.</p>
+    </section>
+
+</body>
+
+</html>

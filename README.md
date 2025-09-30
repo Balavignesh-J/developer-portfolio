@@ -44,19 +44,10 @@ You need to have **Node.js** and **npm** (or yarn) installed.
     git clone [https://github.com/Balavignesh-J/developer-portfolio.git](https://github.com/Balavignesh-J/developer-portfolio.git)
     cd developer-portfolio
     ```
-
-2.  **Install dependencies:**
+    
+2.  **Start the development server:**
     ```bash
-    npm install
-    # or
-    # yarn install
-    ```
-
-3.  **Start the development server:**
-    ```bash
-    npm start
-    # or
-    # yarn start
+       use local server extension
     ```
 
 The application will now be running on `http://localhost:3000` (or another specified port).
@@ -67,6 +58,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-**Balavignesh J** - [Your Email Address] - [Your LinkedIn Profile URL]
+**Balavignesh J** - [[Your Email Address](balav3230@gmail.com)] - [[Your LinkedIn Profile URL](https://www.linkedin.com/in/bala-vignesh-j/)]
 
 Project Link: [https://github.com/Balavignesh-J/developer-portfolio](https://github.com/Balavignesh-J/developer-portfolio)

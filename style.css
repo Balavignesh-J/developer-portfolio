@@ -732,9 +732,9 @@ select.form-control {
 }
 
 @font-face {
-  font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-    format('woff2');
+  font-family: "FKGroteskNeue";
+  src: url("https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2")
+    format("woff2");
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
@@ -786,13 +786,22 @@ html {
   position: relative;
 }
 
+.external-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast) var(--ease-standard);
+  position: relative;
+}
+
 .nav-link:hover,
+.external-link:hover,
 .nav-link:focus {
   color: var(--color-primary);
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -1051,12 +1060,20 @@ section {
 }
 
 .project-image {
-  height: 200px;
-  background: var(--color-bg-4);
+  width: 100%;
+  height: 160px;
+  background: none; /* Remove brown background */
   display: flex;
-  align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .project-placeholder {
@@ -1393,7 +1410,7 @@ section {
   background: var(--color-text-secondary);
 }
 
-.profile-img{
+.profile-img {
   border-radius: 50%;
   width: 300px;
   height: 300px;

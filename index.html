@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-color-scheme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -15,14 +17,14 @@
                 <div class="nav-brand">
                     <h2>Balavignesh J</h2>
                 </div>
-                
+
                 <div class="nav-menu" id="nav-menu">
                     <a href="#intro" class="nav-link">Home</a>
                     <a href="#skills" class="nav-link">Skills</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#coding-profiles" class="nav-link">Coding Profiles</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <a href="./certificates.html" class="nav-link">Certifications</a>
+                    <a href="certificates.html" class="external-link">Certifications</a>
                 </div>
 
                 <div class="nav-actions">
@@ -46,8 +48,10 @@
         <div class="container">
             <div class="intro-content" style="display: flex;justify-content: space-between;gap: 100px;">
                 <div class="intro-text">
-                    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=4000&pause=500&width=435&lines=Front-end+Developer;React+%26+Django+Enthusiast;DSA+in+Python+Lover;Frontend%2C+Backend%2C+Algorithms;Always+Learning%2C+Always+Building" alt="Typing SVG" width="500px"/>
-                    <p class="intro-bio">Passionate full-stack developer with expertise in modern web technologies. I create scalable, user-friendly applications with clean, efficient code.</p>
+                    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=4000&pause=500&width=435&lines=Front-end+Developer;React+%26+Django+Enthusiast;DSA+in+Python+Lover;Frontend%2C+Backend%2C+Algorithms;Always+Learning%2C+Always+Building"
+                        alt="Typing SVG" width="500px" />
+                    <p class="intro-bio">Passionate full-stack developer with expertise in modern web technologies. I
+                        create scalable, user-friendly applications with clean, efficient code.</p>
                     <div class="intro-actions">
                         <a href="#projects" class="btn btn--primary">View My Work</a>
                         <a href="#contact" class="btn btn--outline">Get In Touch</a>
@@ -55,7 +59,8 @@
                 </div>
                 <div class="intro-image">
                     <div class="developer-avatar">
-                        <div class="avatar-placeholder"><img src="/img/profile.jpg" alt="profile" class="profile-img"></div>
+                        <div class="avatar-placeholder"><img src="/img/profile.jpg" alt="profile" class="profile-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,61 +152,106 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <div class="project-placeholder">🛒</div>
+                        <img src="/img/project/ecommerce.png" alt="Project Image" class="project-img" />
                     </div>
                     <div class="project-content">
                         <h3>E-Commerce Platform</h3>
-                        <p>Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard</p>
+                        <p>Modern, responsive e-commerce frontend built with React and styled using Tailwind CSS.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Vite</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/username/ecommerce" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://demo-ecommerce.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
+                            <a href="https://github.com/Balavignesh-J/E-Commerce" target="_blank"
+                                class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://e-commerce-bv-project.netlify.app/" target="_blank"
+                                class="btn btn--sm btn--primary">Live Demo</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
-                        <div class="project-placeholder">📋</div>
+                        <img src="/img/project/movie.png" alt="Project Image" class="project-img" />
                     </div>
                     <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>Collaborative project management tool with real-time updates and team collaboration features</p>
+                        <h3>Movie Info Web App</h3>
+                        <p>Responsive web app to search movie details using OMDb API with watchlist stored locally.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Socket.io</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/username/taskapp" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://demo-taskapp.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">🌤️</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Weather Dashboard</h3>
-                        <p>Interactive weather application with location-based forecasts and beautiful data visualizations</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">OMDb API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/username/weather" target="_blank" class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://demo-weather.com" target="_blank" class="btn btn--sm btn--primary">Live Demo</a>
+                            <a href="https://github.com/Balavignesh-J/Movie-info" target="_blank"
+                                class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://movie-info-bv.netlify.app/" target="_blank"
+                                class="btn btn--sm btn--primary">Live Demo</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/project/weather.png" alt="Project Image" class="project-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App</h3>
+                        <p>Simple, responsive weather app with real-time data from OpenWeatherMap API.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">OpenWeatherMap API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Balavignesh-J/Weather-app" target="_blank"
+                                class="btn btn--sm btn--outline">GitHub</a>
+                            <a href="https://weather-bv-project.netlify.app/" target="_blank"
+                                class="btn btn--sm btn--primary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/project/blog.png" alt="Project Image" class="project-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3>Django Blog App</h3>
+                        <p>Fully functional blog application built with Django and SQL database integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Balavignesh-J/django" target="_blank"
+                                class="btn btn--sm btn--outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/project/api.png" alt="Project Image" class="project-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3>Django REST API</h3>
+                        <p>RESTful API for blog application built with Django REST Framework.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django REST Framework</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Balavignesh-J/django_rest" target="_blank"
+                                class="btn btn--sm btn--outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -213,7 +263,8 @@
             <div class="profiles-grid">
                 <div class="profile-card">
                     <div class="profile-header">
-                        <div class="profile-icon"><img src="/img/logo/leetcode.png" width="60" height="60" alt="logo"></div>
+                        <div class="profile-icon"><img src="/img/logo/leetcode.png" width="60" height="60" alt="logo">
+                        </div>
                         <h3>LeetCode</h3>
                     </div>
                     <div class="profile-stats">
@@ -230,7 +281,8 @@
                             <span class="stat-label">Rank</span>
                         </div> -->
                     </div>
-                    <a href="https://leetcode.com/u/Balavignesh__J/" target="_blank" class="btn btn--outline btn--full-width">View Profile</a>
+                    <a href="https://leetcode.com/u/Balavignesh__J/" target="_blank"
+                        class="btn btn--outline btn--full-width">View Profile</a>
                 </div>
                 <div class="profile-card">
                     <div class="profile-header">
@@ -251,7 +303,8 @@
                             <span class="stat-label">Rank</span>
                         </div> -->
                     </div>
-                    <a href="https://www.geeksforgeeks.org/user/balav5kwh/" target="_blank" class="btn btn--outline btn--full-width">View Profile</a>
+                    <a href="https://www.geeksforgeeks.org/user/balav5kwh/" target="_blank"
+                        class="btn btn--outline btn--full-width">View Profile</a>
                 </div>
             </div>
         </div>
@@ -281,7 +334,8 @@
                     </div>
                     <div class="social-links">
                         <a href="https://github.com/Balavignesh-J" target="_blank" class="social-link">GitHub</a>
-                        <a href="https://www.linkedin.com/in/bala-vignesh-j/" target="_blank" class="social-link">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/bala-vignesh-j/" target="_blank"
+                            class="social-link">LinkedIn</a>
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
@@ -312,4 +366,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

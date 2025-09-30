@@ -73,34 +73,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNavLink);
 
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        if (!name || !email || !message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        showNotification('Thank you! Your message has been sent.', 'success');
-        contactForm.reset();
-    });
+const contactForm = document.getElementById('contact-form');
 
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    if (!name || !email || !message) {
+        showNotification('Please fill in all fields.', 'error');
+        return;
     }
+
+    if (!isValidEmail(email)) {
+        showNotification('Please enter a valid email address.', 'error');
+        return;
+    }
+    
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            showNotification('Thank you! Your message has been sent.', 'success');
+            contactForm.reset();
+        } else {
+            console.error('Web3Forms Error:', data);
+            showNotification(data.message || 'Submission failed. Please try again.', 'error');
+        }
+
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        showNotification('An error occurred during submission. Check your network.', 'error');
+    } finally {
+        submitButton.textContent = 'Send Message';
+        submitButton.disabled = false;
+    }
+});
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
     function showNotification(message, type = 'info') {
         const existingNotification = document.querySelector('.notification');

@@ -306,8 +306,6 @@ html {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  /* Custom */
-  scroll-behavior: smooth;
 }
 
 body {
@@ -522,8 +520,6 @@ select.form-control {
 .form-control:focus {
   border-color: var(--color-primary);
   outline: var(--focus-outline);
-  /* Custom form focus state for box-shadow added later in app.js style but keeping original here */
-  box-shadow: var(--focus-ring);
 }
 
 .form-label {
@@ -741,6 +737,15 @@ select.form-control {
     format("woff2");
 }
 
+/* END PERPLEXITY DESIGN SYSTEM */
+/* Custom styles for the portfolio website */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -751,21 +756,6 @@ select.form-control {
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
   transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.navbar.scrolled {
-  background: rgba(
-    var(--color-surface-rgb, 255, 255, 255),
-    0.95
-  ); 
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-sm);
-}
-[data-color-scheme="dark"] .navbar.scrolled {
-  background: rgba(38, 40, 40, 0.95); /* Charcoal-800 RGB */
-}
-[data-color-scheme="light"] .navbar.scrolled {
-  background: rgba(255, 255, 253, 0.95); /* Cream-100 RGB */
 }
 
 .nav-content {
@@ -788,18 +778,29 @@ select.form-control {
   gap: var(--space-32);
 }
 
-.nav-link,
+.nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast) var(--ease-standard);
+  position: relative;
+}
+
 .external-link {
   color: var(--color-text);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   transition: color var(--duration-fast) var(--ease-standard);
   position: relative;
-  z-index: 10;
 }
 
-.nav-link::after,
-.external-link::after {
+.nav-link:hover,
+.external-link:hover,
+.nav-link:focus {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -808,13 +809,9 @@ select.form-control {
   height: 2px;
   background: var(--color-primary);
   transition: width var(--duration-fast) var(--ease-standard);
-  z-index: 5;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after,
-.external-link:hover::after,
-.external-link.active::after {
+.nav-link:hover::after {
   width: 100%;
 }
 
@@ -896,10 +893,6 @@ select.form-control {
   grid-template-columns: 1fr 300px;
   gap: var(--space-32);
   align-items: center;
-  /* Added from index.html inline style */
-  display: flex;
-  justify-content: space-between;
-  gap: 100px;
 }
 
 .intro-bio {
@@ -999,7 +992,6 @@ section {
   background: var(--color-bg-3);
 }
 
-/* Certifications Grid & Card - Base (from style.css) */
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1040,269 +1032,6 @@ section {
 .cert-date {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
-}
-
-/* Certifications Specific Styling (from certificates.html <style>) */
-/* This block is for the dedicated certificates page to override/supplement the base design system */
-body.certificates-page-body {
-  background: #1c232b; /* Custom Dark BG */
-  color: #f3f7fa;
-  font-family: "Inter", Arial, sans-serif; /* Overrides base font if used */
-}
-
-/* Navigation for certificates.html */
-/* nav {
-  background: #232e39;
-  padding: 12px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-nav .nav-brand h2 {
-  color: rgba(33, 128, 141, 1); 
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  color: #bbc2ca;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-}
-
-nav a:hover,
-nav a:focus {
-  background: #2ec4b6;
-  color: #fff;
-  outline: none;
-}
-
-nav a.certificates-link {
-  background: #2ec4b6;
-  color: #fff;
-}
-
-nav a.certificates-link:hover {
-  background: #28a79f;
-} */
-
-/* Navigation for certificates.html (Base Styles - mostly unchanged) */
-nav {
-  background: #232e39;
-  padding: 12px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  display: flex;
-  /* CHANGE 1: Use space-between for better control, especially on desktop/tablet */
-  justify-content: space-between; 
-  align-items: center;
-}
-
-nav .nav-brand h2 {
-  color: rgba(33, 128, 141, 1);
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  color: #bbc2ca;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-}
-
-nav a:hover,
-nav a:focus {
-  background: #2ec4b6;
-  color: #fff;
-  outline: none;
-}
-
-nav a.certificates-link {
-  background: #2ec4b6;
-  color: #fff;
-}
-
-nav a.certificates-link:hover {
-  background: #28a79f;
-}
-
-/* ------------------------------------------------------------------ */
-
-/* Responsive Styles */
-
-/* Medium devices (e.g., small tablets) - Hide menu, prepare for mobile toggle */
-@media (max-width: 800px) {
-  /* CHANGE 2: On smaller screens, allow the nav bar to wrap if needed */
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px; /* Add some gap if it wraps */
-  }
-
-  /* CHANGE 3: Stack the menu items vertically */
-  nav ul {
-    /* Hide the menu entirely or let it wrap, depending on desired mobile behavior.
-       Since the original HTML/CSS in certificates.html doesn't include a mobile toggle
-       button, we'll opt for a simple wrap with smaller gaps. */
-    gap: 16px; 
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%; /* Take full width to center the wrapped links */
-    padding-top: 8px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* CHANGE 4: Reduce padding on links for a tighter layout */
-  nav a {
-    padding: 6px 10px;
-  }
-}
-
-/* Small devices (e.g., phones) */
-@media (max-width: 500px) {
-  /* CHANGE 5: Ensure the nav brand doesn't get too small and uses full padding */
-  nav {
-    padding: 12px 16px;
-  }
-
-  /* CHANGE 6: If the logo and menu are still side-by-side, force them to stack */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Ensure the brand is centered if it's the only element on its line, but in this column layout, align left is better */
-  nav .nav-brand {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  /* Make the list horizontally center-aligned again */
-  nav ul {
-    justify-content: center;
-  }
-}
-
-
-/* Section Title - Overrides base style.css title for certificates page */
-section.platform-section .section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin: 48px 0 36px;
-  letter-spacing: 1px;
-  color: #2ec4b6;
-  font-weight: 600; /* Re-added from base h2 style to ensure consistency */
-}
-
-/* Certifications Grid & Card - Overrides for certificates.html */
-/* The layout uses .projects-grid and .project-card, so minimal changes needed for certs page layout */
-.certifications-grid-certs-page {
-  /* Using a unique class for the override styles */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  max-width: 1080px;
-  margin: 0 auto 60px auto;
-  padding: 0 16px;
-}
-
-.certification-card.certs-page {
-  /* Using a unique class for the override styles */
-  background: #232e39;
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.12);
-  padding: 32px 20px;
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.certification-card.certs-page:hover {
-  transform: translateY(-4px) scale(1.025);
-  box-shadow: 0 10px 32px rgba(34, 197, 94, 0.18);
-}
-
-.cert-img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 18px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #17181c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.cert-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #2ec4b6;
-  text-align: center;
-}
-
-.cert-issuer.certs-page,
-.cert-date.certs-page {
-  font-size: 0.95rem;
-  color: #bbc2ca;
-  margin-bottom: 2px;
-  text-align: center;
-}
-
-/* Platform Sections Styling */
-section.platform-section {
-  max-width: 900px;
-  margin: 0 auto 72px auto;
-  padding: 0 16px;
-}
-
-section.platform-section p {
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 12px auto 0 auto;
-  text-align: center;
 }
 
 /* Projects Section */
@@ -1431,7 +1160,7 @@ section.platform-section p {
 .profile-stats {
   display: flex;
   justify-content: center;
-  /* grid-template-columns: repeat(3, 1fr); removed grid to use flex for better simple layout */
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-16);
   margin-bottom: var(--space-24);
 }
@@ -1582,8 +1311,6 @@ section.platform-section p {
     grid-template-columns: 1fr;
     text-align: center;
     gap: var(--space-24);
-    /* Overrides inline style from index.html on mobile */
-    display: grid;
   }
 
   .intro-text h1 {
@@ -1613,26 +1340,6 @@ section.platform-section p {
 
   .certifications-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Certificates Page Mobile Overrides */
-  nav ul {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .certification-card.certs-page {
-    padding: 18px;
-  }
-
-  .cert-img {
-    width: 48px;
-    height: 48px;
-  }
-
-  section.platform-section .section-title {
-    font-size: 1.5rem;
-    margin: 36px 0 24px;
   }
 }
 
@@ -1678,6 +1385,11 @@ section.platform-section p {
 .project-card,
 .profile-card {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Form focus states */
+.form-control:focus {
+  box-shadow: var(--focus-ring);
 }
 
 /* Custom scrollbar */

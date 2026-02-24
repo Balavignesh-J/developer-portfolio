@@ -32,7 +32,8 @@ const certificatesData = {
     },
     {
       title: "CSS Essential Training",
-      image: "/img/My_Certificates/LinkedIn_Learning/CSS_Essential_Training.jpg",
+      image:
+        "/img/My_Certificates/LinkedIn_Learning/CSS_Essential_Training.jpg",
       link: "https://drive.google.com/file/d/12w29gIawCiqL_M9Y5WcKUpY3jYaXUQwa/view",
     },
     {
@@ -60,7 +61,8 @@ const certificatesData = {
       link: "https://drive.google.com/file/d/1XeNYEdeAKT5yV69EfW-FeaSFz7EunLMd/view",
     },
     {
-      title: "Oracle Cloud Infrastructure 2025 Certified Al Foundations Associate",
+      title:
+        "Oracle Cloud Infrastructure 2025 Certified Al Foundations Associate",
       image: "/img/My_Certificates/Naan_Mudhalvan/oracle1.jpg",
       link: "https://drive.google.com/file/d/1TuHeEMuq15CpkZbB-bBfdBwwsUPlK9Hv/view",
     },
@@ -115,8 +117,13 @@ const certificatesData = {
     },
     {
       title: "Global Institute Of Engineering And Technology",
-      image: "./img/My_Certificates/Symposiums/Global.jpg",
+      image: "./img/My_Certificates/Symposiums/Global1.jpg",
       link: "https://drive.google.com/file/d/1XQuFxekXqvkorccEq0ahJSH0E8xrZe24/view",
+    },
+    {
+      title: "Global Institute Of Engineering And Technology",
+      image: "./img/My_Certificates/Symposiums/Global2.jpg",
+      link: "https://drive.google.com/file/d/1pSyakv3qBY4udACblSOaDCDuN6sVjXlt/view",
     },
   ],
   udemy: [
@@ -175,8 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
   renderCertificates("nptel", certificatesData.nptel);
   renderCertificates("linkedin-learning", certificatesData.linkedinLearning);
   renderCertificates("naan-mudhalvan", certificatesData.naanMudhalvan);
-  renderCertificates("infosys-springboard", certificatesData.infosysSpringboard);
+  renderCertificates(
+    "infosys-springboard",
+    certificatesData.infosysSpringboard,
+  );
   renderCertificates("Symposiums", certificatesData.symposiums);
   renderCertificates("Udemy", certificatesData.udemy);
 });
-

@@ -125,6 +125,18 @@ const certificatesData = {
       image: "./img/My_Certificates/Symposiums/Global2.jpg",
       link: "https://drive.google.com/file/d/1pSyakv3qBY4udACblSOaDCDuN6sVjXlt/view",
     },
+    {
+      title: "Global Institute Of Engineering And Technology",
+      image: "./img/My_Certificates/Symposiums/Global3.jpg",
+      link: "https://drive.google.com/file/d/1XIZZV_HtNVgnydfdj3jJdNDpMoUZ07bW/view",
+    },
+  ],
+  internship: [
+    {
+      title: "MERN Stack Developer Intern",
+      image: "/img/My_Certificates/Internship/IIT_ROPAR.jpeg",
+      link: "https://drive.google.com/file/d/1Nii7eq01Z2_yqBavqKJ6QWdM9q4m53zQ/view",
+    },
   ],
   udemy: [
     {
@@ -180,12 +192,13 @@ function renderCertificates(sectionId, certificates) {
 
 document.addEventListener("DOMContentLoaded", function () {
   renderCertificates("nptel", certificatesData.nptel);
+  renderCertificates("Symposiums", certificatesData.symposiums);
+  renderCertificates("internship", certificatesData.internship);
   renderCertificates("linkedin-learning", certificatesData.linkedinLearning);
   renderCertificates("naan-mudhalvan", certificatesData.naanMudhalvan);
   renderCertificates(
     "infosys-springboard",
     certificatesData.infosysSpringboard,
   );
-  renderCertificates("Symposiums", certificatesData.symposiums);
   renderCertificates("Udemy", certificatesData.udemy);
 });

@@ -134,7 +134,7 @@ const certificatesData = {
   internship: [
     {
       title: "MERN Stack Developer Intern",
-      image: "/img/My_Certificates/Internship/IIT_ROPAR.jpeg",
+      image: "/img/My_Certificates/Internships/IIT_ROPAR.jpeg",
       link: "https://drive.google.com/file/d/1Nii7eq01Z2_yqBavqKJ6QWdM9q4m53zQ/view",
     },
   ],
@@ -192,8 +192,8 @@ function renderCertificates(sectionId, certificates) {
 
 document.addEventListener("DOMContentLoaded", function () {
   renderCertificates("nptel", certificatesData.nptel);
-  renderCertificates("Symposiums", certificatesData.symposiums);
   renderCertificates("internship", certificatesData.internship);
+  renderCertificates("Symposiums", certificatesData.symposiums);
   renderCertificates("linkedin-learning", certificatesData.linkedinLearning);
   renderCertificates("naan-mudhalvan", certificatesData.naanMudhalvan);
   renderCertificates(

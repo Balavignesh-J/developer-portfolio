@@ -130,6 +130,11 @@ const certificatesData = {
       image: "./img/My_Certificates/Symposiums/Global3.jpg",
       link: "https://drive.google.com/file/d/1XIZZV_HtNVgnydfdj3jJdNDpMoUZ07bW/view",
     },
+    {
+      title: "Kingston Engineering College",
+      image: "./img/My_Certificates/Symposiums/Kingston.jpg",
+      link: "https://drive.google.com/file/d/1FFN15Ag0-_aox2doROFKAPgALlBX4FAB/view",
+    },
   ],
   internship: [
     {

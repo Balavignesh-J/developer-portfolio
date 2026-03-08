@@ -135,6 +135,16 @@ const certificatesData = {
       image: "./img/My_Certificates/Symposiums/Kingston.jpg",
       link: "https://drive.google.com/file/d/1FFN15Ag0-_aox2doROFKAPgALlBX4FAB/view",
     },
+ {
+      title: "Adhiparasakthi College of Engineering Debugging",
+      image: "./img/My_Certificates/Symposiums/adhi1.jpg",
+      link: "https://drive.google.com/file/d/1FFN15Ag0-_aox2doROFKAPgALlBX4FAB/view",
+    },
+ {
+      title: "Adhiparasakthi College of Engineering UIUX",
+      image: "./img/My_Certificates/Symposiums/adhi2.jpg",
+      link: "https://drive.google.com/file/d/1ES24_Blp2FoBiBtSVvHYWk5eajF3RUN8/view",
+    },
   ],
   internship: [
     {

@@ -137,12 +137,12 @@ const certificatesData = {
     },
  {
       title: "Adhiparasakthi College of Engineering Debugging",
-      image: "./img/My_Certificates/Symposiums/adhi1.jpg",
+      image: "./img/My_Certificates/Symposiums/adhi1.jpeg",
       link: "https://drive.google.com/file/d/1vp8_fD0ioT-kNvuJJaBB7qd6pQksrvxd/view",
     },
  {
       title: "Adhiparasakthi College of Engineering UIUX",
-      image: "./img/My_Certificates/Symposiums/adhi2.jpg",
+      image: "./img/My_Certificates/Symposiums/adhi2.jpeg",
       link: "https://drive.google.com/file/d/1ES24_Blp2FoBiBtSVvHYWk5eajF3RUN8/view",
     },
   ],

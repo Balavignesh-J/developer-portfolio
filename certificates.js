@@ -138,7 +138,7 @@ const certificatesData = {
  {
       title: "Adhiparasakthi College of Engineering Debugging",
       image: "./img/My_Certificates/Symposiums/adhi1.jpg",
-      link: "https://drive.google.com/file/d/1FFN15Ag0-_aox2doROFKAPgALlBX4FAB/view",
+      link: "https://drive.google.com/file/d/1vp8_fD0ioT-kNvuJJaBB7qd6pQksrvxd/view",
     },
  {
       title: "Adhiparasakthi College of Engineering UIUX",

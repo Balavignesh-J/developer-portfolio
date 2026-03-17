@@ -145,6 +145,16 @@ const certificatesData = {
       image: "./img/My_Certificates/Symposiums/adhi2.jpeg",
       link: "https://drive.google.com/file/d/1ES24_Blp2FoBiBtSVvHYWk5eajF3RUN8/view",
     },
+    {
+      title: "Podhigai College of Engineering & Technology Debugging",
+      image: "./img/My_Certificates/Symposiums/podhigai_coding.jpg",
+      link: "https://drive.google.com/file/d/1ii2ltihpTdZ0RtWpfw8UijGH6tolPB86/view",
+    },
+    {
+      title: "Podhigai College of Engineering & Technology Quiz",
+      image: "./img/My_Certificates/Symposiums/podhigai_quiz.jpg",
+      link: "https://drive.google.com/file/d/11hHj0cNjSddnPiEcT1M4EdHXEuvRDd75/view",
+    },
   ],
   internship: [
     {

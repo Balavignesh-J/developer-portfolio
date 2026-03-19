@@ -8,12 +8,12 @@ const certificatesData = {
     {
       title: "Programming, Data Structures and Algorithms using Python",
       image:
-        "/img/My_Certificates/NPTEL/Programming,_Data_Structures_and_Algorithms_using_Python.jpg",
+        "/img/My_Certificates/NPTEL/Programming_Data_Structures_and_Algorithms_using_Python.jpg",
       link: "https://drive.google.com/file/d/1FmytVkvCx9eDxci-vlt3mJQhVEQOi2Be/view",
     },
     {
       title: "Programming in Java",
-      image: "/img/My_Certificates/NPTEL/Programming In Java.jpg",
+      image: "/img/My_Certificates/NPTEL/ProgrammingInJava.jpg",
       link: "https://drive.google.com/file/d/1B7-itPpBZW5GKcXL7y4Pr-F0uIkv9BjY/view",
     },
   ],
@@ -39,7 +39,7 @@ const certificatesData = {
     {
       title: "HTML Essential Training (2020)",
       image:
-        "/img/My_Certificates/LinkedIn_Learning/HTML_Essential_Training_(2020).jpg",
+        "/img/My_Certificates/LinkedIn_Learning/HTML_Essential_Training_2020.jpg",
       link: "https://drive.google.com/file/d/1IYBq2fEk8pPrSpna-1jUNYVjj_78koAE/view",
     },
     {

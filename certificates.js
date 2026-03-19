@@ -204,6 +204,7 @@ function renderCertificates(sectionId, certificates) {
     img.className = "project-img";
     img.src = cert.image;
     img.alt = cert.title || "certificate-image";
+    img.loading = "lazy";
 
     const content = document.createElement("div");
     content.className = "project-content";

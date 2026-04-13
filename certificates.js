@@ -81,6 +81,11 @@ const certificatesData = {
       image: "/img/My_Certificates/Naan_Mudhalvan/HCL_GUVI.png",
       link: "https://drive.google.com/file/d/13Fjdsg5uo5syf1Gz-6FLkK7EH7QG4z7p/view",
     },
+    {
+      title: "Digital 101",
+      image: "/img/My_Certificates/Naan_Mudhalvan/Digital_101.jpg",
+      link: "https://drive.google.com/file/d/1huM0XgkvRNQsElwUAWBghySHJyu4Lx2L/view",
+    },
   ],
   infosysSpringboard: [
     {

@@ -18,7 +18,7 @@ const certificatesData = {
     },
 {
       title: "Python for Data Science",
-      image: "/img/My_Certificates/NPTEL/python fords.jpg",
+      image: "/img/My_Certificates/NPTEL/pythonfords.jpg",
       link: "https://drive.google.com/file/d/1IieOhvnpBilIwtZJLso35iyow8OSkf9L/view",
     },
   ],

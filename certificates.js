@@ -16,7 +16,12 @@ const certificatesData = {
       image: "/img/My_Certificates/NPTEL/ProgrammingInJava.jpg",
       link: "https://drive.google.com/file/d/1B7-itPpBZW5GKcXL7y4Pr-F0uIkv9BjY/view",
     },
-{
+    {
+      title: "Programming in Modern C++",
+      image: "/img/My_Certificates/NPTEL/ProgrammingInModernC++.jpg",
+      link: "https://drive.google.com/file/d/1EvNeElwY4PqYPqF331JBIBCLJEIYW-VN/view",
+    },
+    {
       title: "Python for Data Science",
       image: "/img/My_Certificates/NPTEL/pythonfords.jpg",
       link: "https://drive.google.com/file/d/1IieOhvnpBilIwtZJLso35iyow8OSkf9L/view",

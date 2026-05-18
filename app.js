@@ -122,14 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Web3Forms Error:", data);
         showNotification(
           data.message || "Submission failed. Please try again.",
-          "error"
+          "error",
         );
       }
     } catch (error) {
       console.error("Fetch Error:", error);
       showNotification(
         "An error occurred during submission. Check your network.",
-        "error"
+        "error",
       );
     } finally {
       submitButton.textContent = "Send Message";
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, observerOptions);
 
   const animatedElements = document.querySelectorAll(
-    ".skill-category, .certification-card, .project-card, .profile-card"
+    ".skill-category, .certification-card, .project-card, .profile-card",
   );
   animatedElements.forEach((el) => {
     el.style.opacity = "0";

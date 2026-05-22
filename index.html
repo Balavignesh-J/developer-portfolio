@@ -1,363 +1,439 @@
 <!DOCTYPE html>
-<html lang="en" data-color-scheme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balavignesh</title>
+    <title>Balavignesh J — Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Balavignesh J — A passionate full-stack developer specializing in React, Django, and modern web technologies. Building scalable, user-friendly applications.">
+    <meta name="author" content="Balavignesh J">
+    <meta property="og:title" content="Balavignesh J — Full-Stack Developer">
+    <meta property="og:description" content="Passionate full-stack developer with expertise in modern web technologies.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="nav-brand">
-                    <h2>Balavignesh J</h2>
-                </div>
+    <!-- Skip Navigation -->
+    <a href="#main" class="skip-nav">Skip to content</a>
 
-                <div class="nav-menu" id="nav-menu">
-                    <a href="#intro" class="nav-link">Home</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#coding-profiles" class="nav-link">Coding Profiles</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                    <a href="certificates.html" class="external-link">Certifications</a>
-                </div>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-                <div class="nav-actions">
-                    <a href="./resume.pdf" download class="btn btn--primary nav-resume">Resume</a>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                        <span class="theme-icon theme-icon--light">☀️</span>
-                        <span class="theme-icon theme-icon--dark">🌙</span>
-                    </button>
-                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Balavignesh J - Home">
+                <span>BV</span>.dev
+            </a>
+
+            <div class="nav-menu" id="nav-menu" role="menu">
+                <a href="#hero" class="nav-link active" role="menuitem">Home</a>
+                <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                <a href="#profiles" class="nav-link" role="menuitem">Coding</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+                <a href="certificates.html" class="nav-link" role="menuitem">Certifications</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="./resume.pdf" download class="nav-resume-btn" aria-label="Download Resume">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Resume
+                </a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon-sun" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-moon" aria-hidden="true">🌙</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="intro-content" style="display: flex;justify-content: space-between;gap: 100px;">
-                <div class="intro-text">
-                    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=4000&pause=500&width=435&lines=Front-end+Developer;React+%26+Django+Enthusiast;DSA+in+Python+Lover;Frontend%2C+Backend%2C+Algorithms;Always+Learning%2C+Always+Building"
-                        alt="Typing SVG" width="500px" />
-                    <p class="intro-bio">Passionate full-stack developer with expertise in modern web technologies. I
-                        create scalable, user-friendly applications with clean, efficient code.</p>
-                    <div class="intro-actions">
-                        <a href="#projects" class="btn btn--primary">View My Work</a>
-                        <a href="#contact" class="btn btn--outline">Get In Touch</a>
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main">
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="hero" aria-label="Introduction">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">👋 Hello, I'm</p>
+                    <h1 class="hero-name">
+                        Balavignesh <span class="highlight">J</span>
+                    </h1>
+                    <div class="hero-tagline">
+                        <span class="typed-text" id="typed-text"></span>
+                    </div>
+                    <p class="hero-bio">
+                        Passionate full-stack developer with expertise in modern web technologies. I create scalable, user-friendly applications with clean, efficient code.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            View My Work
+                            <span class="btn-arrow" aria-hidden="true">→</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
                 </div>
-                <div class="intro-image">
-                    <div class="developer-avatar">
-                        <div class="avatar-placeholder"><img src="/img/profile.jpg" alt="profile" class="profile-img">
+                <div class="hero-image-wrapper">
+                    <div class="hero-avatar">
+                        <div class="hero-avatar-glow" aria-hidden="true"></div>
+                        <img src="img/profile.jpg" alt="Balavignesh J — Full-Stack Developer" width="320" height="320" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SKILLS ========== -->
+        <section class="skills-section" id="skills" aria-label="Skills and Technologies">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">What I Work With</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">My technical toolkit spanning frontend, backend, and everything in between.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card reveal delay-1" data-category="frontend">
+                        <div class="skill-card-icon" aria-hidden="true">⚡</div>
+                        <h3 class="skill-card-title">Frontend</h3>
+                        <div class="skill-tags-wrap">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal delay-2" data-category="backend">
+                        <div class="skill-card-icon" aria-hidden="true">🔧</div>
+                        <h3 class="skill-card-title">Backend</h3>
+                        <div class="skill-tags-wrap">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal delay-3" data-category="languages">
+                        <div class="skill-card-icon" aria-hidden="true">💻</div>
+                        <h3 class="skill-card-title">Programming Languages</h3>
+                        <div class="skill-tags-wrap">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">DSA</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal delay-4" data-category="tools">
+                        <div class="skill-card-icon" aria-hidden="true">🛠️</div>
+                        <h3 class="skill-card-title">Tools & Technologies</h3>
+                        <div class="skill-tags-wrap">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Canva</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">MySQL Workbench</span>
+                            <span class="skill-tag">MongoDB Compass</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Bootstrap</span>
-                        <span class="skill-tag">Tailwind</span>
-                    </div>
+        <!-- ========== PROJECTS ========== -->
+        <section class="projects-section" id="projects" aria-label="Featured Projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">What I've Built</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A selection of projects that showcase my skills across the full stack.</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">MySQL</span>
+
+                <div class="projects-grid">
+                    <!-- Spotlight Project -->
+                    <div class="project-card-spotlight reveal">
+                        <div class="project-image">
+                            <img src="img/project/ecommerce.png" alt="E-Commerce Platform Screenshot" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">Featured Project</span>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-desc">Modern, responsive e-commerce frontend built with React and styled using Tailwind CSS. Features product listings, cart functionality, and a sleek checkout flow.</p>
+                            <div class="project-tech-list">
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">Tailwind CSS</span>
+                                <span class="project-tech-tag">Vite</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Balavignesh-J/E-Commerce" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="https://e-commerce-bv-project.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    Live Demo <span class="btn-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">DSA</span>
+
+                    <!-- Project 2 -->
+                    <div class="project-card reveal delay-1">
+                        <div class="project-image">
+                            <img src="img/project/movie.png" alt="Movie Info Web App Screenshot" loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">Web App</span>
+                            <h3 class="project-title">Movie Info Web App</h3>
+                            <p class="project-desc">Responsive web app to search movie details using OMDb API with watchlist stored locally.</p>
+                            <div class="project-tech-list">
+                                <span class="project-tech-tag">HTML5</span>
+                                <span class="project-tech-tag">CSS3</span>
+                                <span class="project-tech-tag">JavaScript</span>
+                                <span class="project-tech-tag">OMDb API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Balavignesh-J/Movie-info" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="https://movie-info-bv.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    Live Demo <span class="btn-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">My SQL Workbench</span>
-                        <span class="skill-tag">MongoDB Compass</span>
+
+                    <!-- Project 3 -->
+                    <div class="project-card reveal delay-2">
+                        <div class="project-image">
+                            <img src="img/project/weather.png" alt="Weather App Screenshot" loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">Web App</span>
+                            <h3 class="project-title">Weather App</h3>
+                            <p class="project-desc">Simple, responsive weather app with real-time data from OpenWeatherMap API.</p>
+                            <div class="project-tech-list">
+                                <span class="project-tech-tag">HTML5</span>
+                                <span class="project-tech-tag">CSS3</span>
+                                <span class="project-tech-tag">JavaScript</span>
+                                <span class="project-tech-tag">OpenWeatherMap API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Balavignesh-J/Weather-app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                                <a href="https://weather-bv-project.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    Live Demo <span class="btn-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card reveal delay-3">
+                        <div class="project-image">
+                            <img src="img/project/blog.png" alt="Django Blog App Screenshot" loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">Full Stack</span>
+                            <h3 class="project-title">Django Blog App</h3>
+                            <p class="project-desc">Fully functional blog application built with Django and SQL database integration.</p>
+                            <div class="project-tech-list">
+                                <span class="project-tech-tag">Django</span>
+                                <span class="project-tech-tag">SQL</span>
+                                <span class="project-tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Balavignesh-J/django" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card reveal delay-4">
+                        <div class="project-image">
+                            <img src="img/project/api.png" alt="Django REST API Screenshot" loading="lazy">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">Backend API</span>
+                            <h3 class="project-title">Django REST API</h3>
+                            <p class="project-desc">RESTful API for blog application built with Django REST Framework.</p>
+                            <div class="project-tech-list">
+                                <span class="project-tech-tag">Django REST Framework</span>
+                                <span class="project-tech-tag">API</span>
+                                <span class="project-tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Balavignesh-J/django_rest" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="certifications" class="certifications-section" style="display: none;">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="cert-icon">🎓</div>
-                    <h3>AWS Certified Developer</h3>
-                    <p class="cert-issuer">Amazon Web Services</p>
-                    <p class="cert-date">2024</p>
+        <!-- ========== CODING PROFILES ========== -->
+        <section class="profiles-section" id="profiles" aria-label="Coding Profiles">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Competitive Programming</span>
+                    <h2 class="section-title">Coding Profiles</h2>
+                    <p class="section-subtitle">Sharpening problem-solving skills one challenge at a time.</p>
                 </div>
-                <div class="certification-card">
-                    <div class="cert-icon">⚛️</div>
-                    <h3>React Developer Certification</h3>
-                    <p class="cert-issuer">Meta</p>
-                    <p class="cert-date">2023</p>
-                </div>
-                <div class="certification-card">
-                    <div class="cert-icon">💻</div>
-                    <h3>Full Stack Web Development</h3>
-                    <p class="cert-issuer">freeCodeCamp</p>
-                    <p class="cert-date">2023</p>
+
+                <div class="profiles-grid">
+                    <div class="profile-card reveal delay-1">
+                        <div class="profile-card-icon">
+                            <img src="img/logo/leetcode.png" alt="LeetCode Logo" width="64" height="64" loading="lazy">
+                        </div>
+                        <h3 class="profile-card-name">LeetCode</h3>
+                        <div class="profile-stat">
+                            <div class="profile-stat-number" data-count="350">0</div>
+                            <div class="profile-stat-label">Problems Solved</div>
+                        </div>
+                        <a href="https://leetcode.com/u/Balavignesh__J/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%">
+                            View Profile <span class="btn-arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+
+                    <div class="profile-card reveal delay-2">
+                        <div class="profile-card-icon">
+                            <img src="img/logo/gfg.png" alt="GeeksforGeeks Logo" width="64" height="64" loading="lazy">
+                        </div>
+                        <h3 class="profile-card-name">GeeksforGeeks</h3>
+                        <div class="profile-stat">
+                            <div class="profile-stat-number" data-count="200">0</div>
+                            <div class="profile-stat-label">Problems Solved</div>
+                        </div>
+                        <a href="https://www.geeksforgeeks.org/user/balav5kwh/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%">
+                            View Profile <span class="btn-arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/img/project/ecommerce.png" alt="Project Image" class="project-img" />
-                    </div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Modern, responsive e-commerce frontend built with React and styled using Tailwind CSS.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Vite</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Balavignesh-J/E-Commerce" target="_blank"
-                                class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://e-commerce-bv-project.netlify.app/" target="_blank"
-                                class="btn btn--sm btn--primary">Live Demo</a>
-                        </div>
-                    </div>
+        <!-- ========== CONTACT ========== -->
+        <section class="contact-section" id="contact" aria-label="Get In Touch">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Say Hello</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">I'm always interested in new opportunities and interesting projects. Feel free to reach out!</p>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/img/project/movie.png" alt="Project Image" class="project-img" />
-                    </div>
-                    <div class="project-content">
-                        <h3>Movie Info Web App</h3>
-                        <p>Responsive web app to search movie details using OMDb API with watchlist stored locally.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">OMDb API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Balavignesh-J/Movie-info" target="_blank"
-                                class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://movie-info-bv.netlify.app/" target="_blank"
-                                class="btn btn--sm btn--primary">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <h3 class="contact-info-title">Let's Connect</h3>
+                        <p class="contact-info-text">
+                            Whether you have a question, a project idea, or just want to say hi — I'd love to hear from you.
+                        </p>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/img/project/weather.png" alt="Project Image" class="project-img" />
-                    </div>
-                    <div class="project-content">
-                        <h3>Weather App</h3>
-                        <p>Simple, responsive weather app with real-time data from OpenWeatherMap API.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">OpenWeatherMap API</span>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-item-icon" aria-hidden="true">📧</div>
+                                <span class="contact-item-text">balav3230@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon" aria-hidden="true">📱</div>
+                                <span class="contact-item-text">+91 9080238633</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon" aria-hidden="true">📍</div>
+                                <span class="contact-item-text">Vellore, TamilNadu</span>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Balavignesh-J/Weather-app" target="_blank"
-                                class="btn btn--sm btn--outline">GitHub</a>
-                            <a href="https://weather-bv-project.netlify.app/" target="_blank"
-                                class="btn btn--sm btn--primary">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/img/project/blog.png" alt="Project Image" class="project-img" />
-                    </div>
-                    <div class="project-content">
-                        <h3>Django Blog App</h3>
-                        <p>Fully functional blog application built with Django and SQL database integration.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Balavignesh-J/django" target="_blank"
-                                class="btn btn--sm btn--outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/img/project/api.png" alt="Project Image" class="project-img" />
-                    </div>
-                    <div class="project-content">
-                        <h3>Django REST API</h3>
-                        <p>RESTful API for blog application built with Django REST Framework.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django REST Framework</span>
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Balavignesh-J/django_rest" target="_blank"
-                                class="btn btn--sm btn--outline">GitHub</a>
+                        <div class="contact-socials">
+                            <a href="https://github.com/Balavignesh-J" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/bala-vignesh-j/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                LinkedIn
+                            </a>
                         </div>
                     </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section id="coding-profiles" class="coding-profiles-section">
-        <div class="container">
-            <h2 class="section-title">Coding Profiles</h2>
-            <div class="profiles-grid">
-                <div class="profile-card">
-                    <div class="profile-header">
-                        <div class="profile-icon"><img src="/img/logo/leetcode.png" width="60" height="60" alt="logo">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form reveal-right" id="contact-form">
+                        <input type="hidden" name="access_key" value="0db8496a-caa7-482c-b545-2c33e606071d">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
                         </div>
-                        <h3>LeetCode</h3>
-                    </div>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-number">350+</span>
-                            <span class="stat-label">Problems Solved</span>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
                         </div>
-                        <!-- <div class="stat">
-                            <span class="stat-number">1850</span>
-                            <span class="stat-label">Contest Rating</span>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-input" placeholder="Tell me about your project..." required></textarea>
                         </div>
-                        <div class="stat">
-                            <span class="stat-badge status--success">Expert</span>
-                            <span class="stat-label">Rank</span>
-                        </div> -->
-                    </div>
-                    <a href="https://leetcode.com/u/Balavignesh__J/" target="_blank"
-                        class="btn btn--outline btn--full-width">View Profile</a>
-                </div>
-                <div class="profile-card">
-                    <div class="profile-header">
-                        <div class="profile-icon"><img src="/img/logo/gfg.png" width="50" height="50" alt="logo"></div>
-                        <h3>GeeksforGeeks</h3>
-                    </div>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">Problems Solved</span>
-                        </div>
-                        <!-- <div class="stat">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">Articles Published</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-badge status--warning">5 Star</span>
-                            <span class="stat-label">Rank</span>
-                        </div> -->
-                    </div>
-                    <a href="https://www.geeksforgeeks.org/user/balav5kwh/" target="_blank"
-                        class="btn btn--outline btn--full-width">View Profile</a>
+                        <button type="submit" class="form-submit" id="form-submit">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact-section">
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always interested in new opportunities and interesting projects. Feel free to reach out!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <span>balav3230@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <span>+91 9080238633</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <span>Vellore, TamilNadu</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Balavignesh-J" target="_blank" class="social-link">GitHub</a>
-                        <a href="https://www.linkedin.com/in/bala-vignesh-j/" target="_blank"
-                            class="social-link">LinkedIn</a>
-                    </div>
+            <div class="footer-inner">
+                <div class="footer-brand"><span>BV</span>.dev</div>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="certificates.html" class="footer-link">Certifications</a>
                 </div>
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
-                    <input type="hidden" name="access_key" value="0db8496a-caa7-482c-b545-2c33e606071d">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
-                </form>
             </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Balavignesh Developer. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2025 Balavignesh Developer. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 
     <script src="app.js"></script>
 </body>

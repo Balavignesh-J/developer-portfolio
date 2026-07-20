@@ -4,13 +4,14 @@
    ============================================ */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 /* ---------- Design Tokens ---------- */
 :root {
   /* Typography */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
 
   --text-display: clamp(2.8rem, 6vw, 4.5rem);
   --text-h1: clamp(2rem, 4vw, 3rem);
@@ -22,17 +23,17 @@
   --text-xs: 0.75rem;
 
   /* Spacing (8px base) */
-  --sp-1: 0.25rem;   /* 4px */
-  --sp-2: 0.5rem;    /* 8px */
-  --sp-3: 0.75rem;   /* 12px */
-  --sp-4: 1rem;      /* 16px */
-  --sp-5: 1.5rem;    /* 24px */
-  --sp-6: 2rem;      /* 32px */
-  --sp-8: 3rem;      /* 48px */
-  --sp-10: 4rem;     /* 64px */
-  --sp-12: 5rem;     /* 80px */
-  --sp-16: 7.5rem;   /* 120px */
-  --sp-20: 10rem;    /* 160px */
+  --sp-1: 0.25rem; /* 4px */
+  --sp-2: 0.5rem; /* 8px */
+  --sp-3: 0.75rem; /* 12px */
+  --sp-4: 1rem; /* 16px */
+  --sp-5: 1.5rem; /* 24px */
+  --sp-6: 2rem; /* 32px */
+  --sp-8: 3rem; /* 48px */
+  --sp-10: 4rem; /* 64px */
+  --sp-12: 5rem; /* 80px */
+  --sp-16: 7.5rem; /* 120px */
+  --sp-20: 10rem; /* 160px */
 
   /* Radii */
   --radius-sm: 8px;
@@ -193,8 +194,9 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
-  transition: background-color var(--duration-slow) var(--ease),
-              color var(--duration-slow) var(--ease);
+  transition:
+    background-color var(--duration-slow) var(--ease),
+    color var(--duration-slow) var(--ease);
 }
 
 body.no-scroll {
@@ -212,7 +214,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -223,7 +226,8 @@ button {
   background: none;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: inherit;
 }
 
@@ -310,52 +314,97 @@ input, textarea {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes floatSlow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-15px) rotate(2deg); }
-  66% { transform: translateY(-8px) rotate(-1deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes typing-cursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes border-dance {
-  0%, 100% { border-color: var(--accent-primary); }
-  50% { border-color: var(--accent-secondary); }
+  0%,
+  100% {
+    border-color: var(--accent-primary);
+  }
+  50% {
+    border-color: var(--accent-secondary);
+  }
 }
 
 /* ---------- Scroll Reveal ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
 }
 
 .reveal.revealed {
@@ -366,7 +415,9 @@ input, textarea {
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
 }
 
 .reveal-left.revealed {
@@ -377,7 +428,9 @@ input, textarea {
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
 }
 
 .reveal-right.revealed {
@@ -388,7 +441,9 @@ input, textarea {
 .reveal-scale {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
 }
 
 .reveal-scale.revealed {
@@ -397,12 +452,24 @@ input, textarea {
 }
 
 /* Stagger delays */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+.delay-4 {
+  transition-delay: 0.4s;
+}
+.delay-5 {
+  transition-delay: 0.5s;
+}
+.delay-6 {
+  transition-delay: 0.6s;
+}
 
 /* ---------- Utility Classes ---------- */
 .gradient-text {
@@ -631,7 +698,7 @@ input, textarea {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -700,10 +767,18 @@ input, textarea {
   background: rgba(167, 139, 250, 0.08);
 }
 
-[data-theme="dark"] .theme-icon-sun { display: none; }
-[data-theme="dark"] .theme-icon-moon { display: inline; }
-[data-theme="light"] .theme-icon-sun { display: inline; }
-[data-theme="light"] .theme-icon-moon { display: none; }
+[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+[data-theme="dark"] .theme-icon-moon {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-sun {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-moon {
+  display: none;
+}
 
 /* Mobile Menu Toggle */
 .mobile-toggle {
@@ -790,7 +865,11 @@ input, textarea {
 .hero-orb-3 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   top: 40%;
   left: 30%;
   animation-delay: -5s;
@@ -807,7 +886,11 @@ input, textarea {
   background-size: 60px 60px;
   opacity: 0.3;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 30%,
+    transparent 70%
+  );
 }
 
 .hero-content {
@@ -890,7 +973,7 @@ input, textarea {
 }
 
 .hero-avatar::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -4px;
   border-radius: 30%;
@@ -900,7 +983,7 @@ input, textarea {
 }
 
 .hero-avatar::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 30%;
@@ -974,7 +1057,7 @@ input, textarea {
 }
 
 .skill-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -991,21 +1074,45 @@ input, textarea {
 }
 
 /* Color-coded skill categories */
-.skill-card[data-category="frontend"] { background: var(--skill-frontend); }
-.skill-card[data-category="frontend"]::before { background: var(--skill-frontend-accent); }
-.skill-card[data-category="frontend"] .skill-card-title { color: var(--skill-frontend-accent); }
+.skill-card[data-category="frontend"] {
+  background: var(--skill-frontend);
+}
+.skill-card[data-category="frontend"]::before {
+  background: var(--skill-frontend-accent);
+}
+.skill-card[data-category="frontend"] .skill-card-title {
+  color: var(--skill-frontend-accent);
+}
 
-.skill-card[data-category="backend"] { background: var(--skill-backend); }
-.skill-card[data-category="backend"]::before { background: var(--skill-backend-accent); }
-.skill-card[data-category="backend"] .skill-card-title { color: var(--skill-backend-accent); }
+.skill-card[data-category="backend"] {
+  background: var(--skill-backend);
+}
+.skill-card[data-category="backend"]::before {
+  background: var(--skill-backend-accent);
+}
+.skill-card[data-category="backend"] .skill-card-title {
+  color: var(--skill-backend-accent);
+}
 
-.skill-card[data-category="languages"] { background: var(--skill-languages); }
-.skill-card[data-category="languages"]::before { background: var(--skill-languages-accent); }
-.skill-card[data-category="languages"] .skill-card-title { color: var(--skill-languages-accent); }
+.skill-card[data-category="languages"] {
+  background: var(--skill-languages);
+}
+.skill-card[data-category="languages"]::before {
+  background: var(--skill-languages-accent);
+}
+.skill-card[data-category="languages"] .skill-card-title {
+  color: var(--skill-languages-accent);
+}
 
-.skill-card[data-category="tools"] { background: var(--skill-tools); }
-.skill-card[data-category="tools"]::before { background: var(--skill-tools-accent); }
-.skill-card[data-category="tools"] .skill-card-title { color: var(--skill-tools-accent); }
+.skill-card[data-category="tools"] {
+  background: var(--skill-tools);
+}
+.skill-card[data-category="tools"]::before {
+  background: var(--skill-tools-accent);
+}
+.skill-card[data-category="tools"] .skill-card-title {
+  color: var(--skill-tools-accent);
+}
 
 .skill-card-icon {
   font-size: 1.75rem;
@@ -1137,7 +1244,7 @@ input, textarea {
 .project-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
   opacity: 0;
   transition: opacity var(--duration) var(--ease);
   display: flex;
@@ -1288,7 +1395,7 @@ input, textarea {
 }
 
 .contact-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -20%;
@@ -1301,7 +1408,7 @@ input, textarea {
 }
 
 .contact-section::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -30%;
   right: -10%;
@@ -1497,7 +1604,7 @@ textarea.form-input {
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

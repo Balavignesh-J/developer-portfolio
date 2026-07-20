@@ -4,12 +4,13 @@
    ============================================ */
 
 /* Import Google Fonts (same as main) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 /* ---------- Design Tokens (same as main) ---------- */
 :root {
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
 
   --text-display: clamp(2.8rem, 6vw, 4.5rem);
   --text-h1: clamp(2rem, 4vw, 3rem);
@@ -134,8 +135,9 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
-  transition: background-color var(--duration-slow) var(--ease),
-              color var(--duration-slow) var(--ease);
+  transition:
+    background-color var(--duration-slow) var(--ease),
+    color var(--duration-slow) var(--ease);
 }
 
 img {
@@ -149,7 +151,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -172,7 +175,9 @@ button {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
 }
 
 .reveal.revealed {
@@ -279,10 +284,18 @@ button {
   border-color: var(--accent-primary);
 }
 
-[data-theme="dark"] .theme-icon-sun { display: none; }
-[data-theme="dark"] .theme-icon-moon { display: inline; }
-[data-theme="light"] .theme-icon-sun { display: inline; }
-[data-theme="light"] .theme-icon-moon { display: none; }
+[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+[data-theme="dark"] .theme-icon-moon {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-sun {
+  display: inline;
+}
+[data-theme="light"] .theme-icon-moon {
+  display: none;
+}
 
 /* Mobile hamburger */
 .cert-hamburger {
@@ -366,7 +379,7 @@ button {
 }
 
 .platform-title::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
@@ -424,7 +437,7 @@ button {
 .cert-card-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
   opacity: 0;
   transition: opacity var(--duration) var(--ease);
   display: flex;
@@ -437,14 +450,14 @@ button {
 }
 
 .cert-card-image-overlay span {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   font-weight: 600;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cert-card-body {
@@ -527,7 +540,7 @@ button {
 }
 
 .cert-footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

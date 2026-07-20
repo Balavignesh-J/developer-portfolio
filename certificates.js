@@ -13,7 +13,8 @@ const certificatesData = {
     },
     {
       title: "Programming, Data Structures and Algorithms using Python",
-      image: "img/My_Certificates/NPTEL/Programming_Data_Structures_and_Algorithms_using_Python.jpg",
+      image:
+        "img/My_Certificates/NPTEL/Programming_Data_Structures_and_Algorithms_using_Python.jpg",
       link: "https://drive.google.com/file/d/1FmytVkvCx9eDxci-vlt3mJQhVEQOi2Be/view",
     },
     {
@@ -35,12 +36,14 @@ const certificatesData = {
   linkedinLearning: [
     {
       title: "Creating a Responsive Web Design:Advanced Techniques",
-      image: "img/My_Certificates/LinkedIn_Learning/Creating_a_Responsive_Web_Design_Advanced_Techniques.jpg",
+      image:
+        "img/My_Certificates/LinkedIn_Learning/Creating_a_Responsive_Web_Design_Advanced_Techniques.jpg",
       link: "https://drive.google.com/file/d/1MzreukNJ8dS2yBfd43enbjU1OjG3wgQL/view",
     },
     {
       title: "CSS: Advanced Layouts with Grid",
-      image: "img/My_Certificates/LinkedIn_Learning/CSS_Advanced_Layouts_with_Grid.jpg",
+      image:
+        "img/My_Certificates/LinkedIn_Learning/CSS_Advanced_Layouts_with_Grid.jpg",
       link: "https://drive.google.com/file/d/1MpRl7gAFytsiHclaQOzT1YMMzTNSjulY/view",
     },
     {
@@ -50,7 +53,8 @@ const certificatesData = {
     },
     {
       title: "HTML Essential Training (2020)",
-      image: "img/My_Certificates/LinkedIn_Learning/HTML_Essential_Training_2020.jpg",
+      image:
+        "img/My_Certificates/LinkedIn_Learning/HTML_Essential_Training_2020.jpg",
       link: "https://drive.google.com/file/d/1IYBq2fEk8pPrSpna-1jUNYVjj_78koAE/view",
     },
     {
@@ -60,7 +64,8 @@ const certificatesData = {
     },
     {
       title: "Introduction to Web Design and Development",
-      image: "img/My_Certificates/LinkedIn_Learning/Introduction_to_Web_Design_and_Development.jpg",
+      image:
+        "img/My_Certificates/LinkedIn_Learning/Introduction_to_Web_Design_and_Development.jpg",
       link: "https://drive.google.com/file/d/1G96QMUo42og1YUxTiuUz3uyAz_9U4biP/view",
     },
   ],
@@ -71,7 +76,8 @@ const certificatesData = {
       link: "https://drive.google.com/file/d/1XeNYEdeAKT5yV69EfW-FeaSFz7EunLMd/view",
     },
     {
-      title: "Oracle Cloud Infrastructure 2025 Certified Al Foundations Associate",
+      title:
+        "Oracle Cloud Infrastructure 2025 Certified Al Foundations Associate",
       image: "img/My_Certificates/Naan_Mudhalvan/oracle1.jpg",
       link: "https://drive.google.com/file/d/1TuHeEMuq15CpkZbB-bBfdBwwsUPlK9Hv/view",
     },
@@ -203,7 +209,7 @@ const certificatesData = {
 
 // ========== Application ==========
 (function () {
-  'use strict';
+  "use strict";
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
@@ -211,25 +217,25 @@ const certificatesData = {
   // ========== Theme ==========
   const Theme = {
     init() {
-      const saved = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', saved);
+      const saved = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", saved);
 
-      const toggle = $('#cert-theme-toggle');
+      const toggle = $("#cert-theme-toggle");
       if (toggle) {
-        toggle.addEventListener('click', () => this.toggle());
+        toggle.addEventListener("click", () => this.toggle());
       }
     },
 
     toggle() {
       const html = document.documentElement;
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      const current = html.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
 
       const meta = $('meta[name="theme-color"]');
       if (meta) {
-        meta.setAttribute('content', next === 'dark' ? '#0a0a0f' : '#fafafa');
+        meta.setAttribute("content", next === "dark" ? "#0a0a0f" : "#fafafa");
       }
     },
   };
@@ -237,38 +243,38 @@ const certificatesData = {
   // ========== Mobile Nav ==========
   const MobileNav = {
     init() {
-      const hamburger = $('#cert-hamburger');
-      const navLinks = $('#cert-nav-links');
+      const hamburger = $("#cert-hamburger");
+      const navLinks = $("#cert-nav-links");
       if (!hamburger || !navLinks) return;
 
-      hamburger.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        hamburger.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        hamburger.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
       });
 
       // Close on link click
-      $$('.cert-nav-link', navLinks).forEach((link) => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
+      $$(".cert-nav-link", navLinks).forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
         });
       });
 
       // Close on outside click
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
+          navLinks.classList.remove("open");
+          hamburger.classList.remove("active");
         }
       });
 
       // Close on Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          navLinks.classList.remove("open");
+          hamburger.classList.remove("active");
         }
       });
     },
@@ -277,27 +283,28 @@ const certificatesData = {
   // ========== Smooth Scroll ==========
   const SmoothScroll = {
     init() {
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         const link = e.target.closest('a[href^="#"]');
         if (!link) return;
 
-        const targetId = link.getAttribute('href');
-        if (targetId === '#') return;
+        const targetId = link.getAttribute("href");
+        if (targetId === "#") return;
 
         const target = $(targetId);
         if (!target) return;
 
         e.preventDefault();
         const offset = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const top =
+          target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
       });
     },
   };
 
   // ========== Render Certificates ==========
   function renderCertificates() {
-    const grids = $$('.cert-grid[data-section]');
+    const grids = $$(".cert-grid[data-section]");
 
     grids.forEach((grid) => {
       const sectionKey = grid.dataset.section;
@@ -308,11 +315,11 @@ const certificatesData = {
       const fragment = document.createDocumentFragment();
 
       certs.forEach((cert, index) => {
-        const card = document.createElement('a');
+        const card = document.createElement("a");
         card.href = cert.link;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
-        card.className = 'cert-card reveal';
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.className = "cert-card reveal";
         card.style.transitionDelay = `${Math.min(index * 0.08, 0.5)}s`;
 
         card.innerHTML = `
@@ -328,8 +335,8 @@ const certificatesData = {
         `;
 
         // Add lightbox on image click
-        const img = card.querySelector('img');
-        img.addEventListener('click', (e) => {
+        const img = card.querySelector("img");
+        img.addEventListener("click", (e) => {
           e.preventDefault();
           e.stopPropagation();
           Lightbox.open(cert.image, cert.title);
@@ -345,62 +352,62 @@ const certificatesData = {
   // ========== Lightbox ==========
   const Lightbox = {
     init() {
-      const lightbox = $('#lightbox');
-      const closeBtn = $('#lightbox-close');
+      const lightbox = $("#lightbox");
+      const closeBtn = $("#lightbox-close");
       if (!lightbox || !closeBtn) return;
 
-      closeBtn.addEventListener('click', () => this.close());
+      closeBtn.addEventListener("click", () => this.close());
 
-      lightbox.addEventListener('click', (e) => {
+      lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) this.close();
       });
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') this.close();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") this.close();
       });
     },
 
     open(src, alt) {
-      const lightbox = $('#lightbox');
-      const img = $('#lightbox-img');
+      const lightbox = $("#lightbox");
+      const img = $("#lightbox-img");
       if (!lightbox || !img) return;
 
       img.src = src;
-      img.alt = alt || 'Certificate preview';
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      img.alt = alt || "Certificate preview";
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     },
 
     close() {
-      const lightbox = $('#lightbox');
+      const lightbox = $("#lightbox");
       if (!lightbox) return;
 
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
     },
   };
 
   // ========== Scroll Reveal ==========
   const ScrollReveal = {
     init() {
-      const elements = $$('.reveal');
+      const elements = $$(".reveal");
       if (!elements.length) return;
 
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
+              entry.target.classList.add("revealed");
               observer.unobserve(entry.target);
             }
           });
         },
         {
           threshold: 0.1,
-          rootMargin: '0px 0px -40px 0px',
-        }
+          rootMargin: "0px 0px -40px 0px",
+        },
       );
 
       elements.forEach((el) => observer.observe(el));
@@ -421,8 +428,8 @@ const certificatesData = {
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }

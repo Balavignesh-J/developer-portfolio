@@ -117,7 +117,7 @@ const certificatesData = {
   symposiums: [
     {
       title: "C. Abdul Hakeem College of Engineering & Technology",
-      image: "img/My_Certificates/Symposiums/Hakeem.jpeg",
+      image: "img/My_Certificates/Symposiums/Hakeem1.jpeg",
       link: "https://drive.google.com/file/d/1c5m92nm270MLMz05I-R33vCqyYW1jXx-/view",
     },
     {
@@ -184,6 +184,11 @@ const certificatesData = {
       title: "Ganadipathy Tulsi's Jain Engineering College Vellore",
       image: "img/My_Certificates/Symposiums/GTEC2.jpg",
       link: "https://drive.google.com/file/d/1gBUm6s3-7iUVZQ98UeZKJ5yVdN5ECNe3/view",
+    },
+    {
+      title: "C. Abdul Hakeem College of Engineering & Technology",
+      image: "img/My_Certificates/Symposiums/Hakeem2.jpeg",
+      link: "https://drive.google.com/file/d/1Tr7CLvhu-RNyPsyqLyp9IenRqQ12B08p/view",
     },
   ],
   internship: [

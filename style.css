@@ -185,6 +185,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -194,6 +196,9 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   transition:
     background-color var(--duration-slow) var(--ease),
     color var(--duration-slow) var(--ease);
@@ -645,6 +650,7 @@ textarea {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: var(--z-nav);
   padding: var(--sp-4) 0;
   transition: all var(--duration) var(--ease);
@@ -664,6 +670,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .nav-logo {
@@ -673,6 +680,8 @@ textarea {
   color: var(--text-primary);
   position: relative;
   z-index: calc(var(--z-nav) + 10);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-logo span {
@@ -685,16 +694,17 @@ textarea {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--sp-6);
+  gap: clamp(0.75rem, 1.6vw, var(--sp-6));
 }
 
 .nav-link {
-  font-size: var(--text-small);
+  font-size: clamp(0.8rem, 0.9vw, var(--text-small));
   font-weight: 500;
   color: var(--text-secondary);
   position: relative;
   padding: var(--sp-1) 0;
   transition: color var(--duration) var(--ease);
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -725,6 +735,7 @@ textarea {
   gap: var(--sp-3);
   position: relative;
   z-index: calc(var(--z-nav) + 10);
+  flex-shrink: 0;
 }
 
 .nav-resume-btn {
@@ -1890,6 +1901,42 @@ textarea.form-input {
    RESPONSIVE — Tablet (≤1024px)
    ============================================ */
 @media (max-width: 1024px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-primary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration) var(--ease);
+    z-index: var(--z-nav);
+    overflow-y: auto;
+    padding: var(--sp-8) var(--sp-4);
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu .nav-link {
+    font-size: var(--text-h3);
+    font-weight: 600;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1948,37 +1995,6 @@ textarea.form-input {
 @media (max-width: 768px) {
   :root {
     --container-padding: var(--sp-4);
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg-primary);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--sp-6);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--duration) var(--ease);
-    z-index: var(--z-nav);
-  }
-
-  .nav-menu.open {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-menu .nav-link {
-    font-size: var(--text-h3);
-    font-weight: 600;
-  }
-
-  .mobile-toggle {
-    display: flex;
   }
 
   .hero {
@@ -2053,6 +2069,26 @@ textarea.form-input {
    RESPONSIVE — Small Mobile (≤480px)
    ============================================ */
 @media (max-width: 480px) {
+  .nav-actions {
+    gap: var(--sp-2);
+  }
+
+  .nav-resume-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .mobile-toggle {
+    width: 26px;
+    height: 26px;
+  }
+
   .hero {
     padding: var(--sp-10) 0 var(--sp-6);
   }

@@ -81,6 +81,11 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && this.isOpen) this.close();
       });
+
+      // Close on window resize if > 1024px
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024 && this.isOpen) this.close();
+      });
     },
 
     toggle() {

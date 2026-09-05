@@ -190,12 +190,22 @@ const certificatesData = {
       image: "img/My_Certificates/Symposiums/Hakeem2.jpeg",
       link: "https://drive.google.com/file/d/1Tr7CLvhu-RNyPsyqLyp9IenRqQ12B08p/view",
     },
+    {
+      title: "C. Abdul Hakeem College of Engineering & Technology",
+      image: "img/My_Certificates/Symposiums/Hakeem3.jpeg",
+      link: "https://drive.google.com/file/d/1A7OQbqzGw7b_DEJKUoXpvTHYkBgYwqfu/view",
+    },
   ],
   internship: [
     {
       title: "MERN Stack Developer Intern",
       image: "img/My_Certificates/Internships/IIT_ROPAR.jpeg",
       link: "https://drive.google.com/file/d/1Nii7eq01Z2_yqBavqKJ6QWdM9q4m53zQ/view",
+    },
+    {
+      title: "PowerBi Developer Intern",
+      image: "img/My_Certificates/Internships/Systech.jpeg",
+      link: "https://drive.google.com/file/d/1B_z7ieVJfFXN3fpMuzW9ssIzbCAT2lV0/view",
     },
   ],
   udemy: [
@@ -280,6 +290,16 @@ const certificatesData = {
         if (e.key === "Escape") {
           navLinks.classList.remove("open");
           hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Close on window resize if > 1024px
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+          navLinks.classList.remove("open");
+          hamburger.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
         }
       });
     },

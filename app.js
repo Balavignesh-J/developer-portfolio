@@ -236,9 +236,9 @@
   // ========== TYPING ANIMATION ==========
   const TypeWriter = {
     phrases: [
-      "Front-end Developer",
-      "React & Django Enthusiast",
-      "DSA in Python Lover",
+      "MERN Stack Developer",
+      "React Enthusiast",
+      "DSA in Java and Python",
       "Frontend, Backend, Algorithms",
       "Always Learning, Always Building",
     ],

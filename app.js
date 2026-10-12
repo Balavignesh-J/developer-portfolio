@@ -305,8 +305,15 @@
       counters.forEach((el) => observer.observe(el));
     },
 
-    animate(el) {
+    animate(el, fromVal = 0) {
       const target = parseInt(el.dataset.count);
+      if (isNaN(target)) return;
+
+      if (el._counterRaf) {
+        cancelAnimationFrame(el._counterRaf);
+      }
+
+      el.dataset.animated = "true";
       const duration = 2000;
       const startTime = performance.now();
 
@@ -316,16 +323,51 @@
 
         // Ease-out cubic
         const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
+        const current = Math.round(fromVal + eased * (target - fromVal));
 
         el.textContent = current + "+";
 
         if (progress < 1) {
-          requestAnimationFrame(update);
+          el._counterRaf = requestAnimationFrame(update);
+        } else {
+          el._counterRaf = null;
         }
       };
 
-      requestAnimationFrame(update);
+      el._counterRaf = requestAnimationFrame(update);
+    },
+  };
+
+  // ========== LEETCODE STATS (LIVE) ==========
+  const LeetCodeStats = {
+    async init() {
+      const el = $("#leetcode-stat-count");
+      if (!el) return;
+
+      try {
+        const res = await fetch("https://leetcode-stats.tashif.codes/Balavignesh__j/profile");
+        if (!res.ok) return;
+
+        const data = await res.json();
+        const allStats = data?.submitStats?.acSubmissionNum?.find(
+          (item) => item.difficulty === "All"
+        );
+
+        const totalSolved = allStats?.count;
+        if (typeof totalSolved === "number" && totalSolved > 0) {
+          const oldTarget = parseInt(el.dataset.count) || 0;
+          el.dataset.count = totalSolved;
+
+          // If the counter was already animated by IntersectionObserver, re-animate up smoothly
+          if (el.dataset.animated === "true" && totalSolved !== oldTarget) {
+            const currentDisplay = parseInt(el.textContent) || oldTarget;
+            Counter.animate(el, currentDisplay);
+          }
+        }
+      } catch (err) {
+        // Fallback to default data-count seamlessly
+        console.warn("LeetCode live stats fetch failed:", err);
+      }
     },
   };
 
@@ -508,6 +550,7 @@
     ScrollReveal.init();
     TypeWriter.init();
     Counter.init();
+    LeetCodeStats.init();
     CursorGlow.init();
     Particles.init();
     ContactForm.init();

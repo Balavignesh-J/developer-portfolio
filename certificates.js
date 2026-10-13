@@ -32,6 +32,11 @@ const certificatesData = {
       image: "img/My_Certificates/NPTEL/pythonfords.jpg",
       link: "https://drive.google.com/file/d/1IieOhvnpBilIwtZJLso35iyow8OSkf9L/view",
     },
+    {
+      title: "Data Base Management System",
+      image: "img/My_Certificates/NPTEL/DBMS.jpg",
+      link: "https://drive.google.com/file/d/1LXPSXpg6krsSIDHUmwVoKJxjYAOnmjqh/view",
+    },
   ],
   linkedinLearning: [
     {

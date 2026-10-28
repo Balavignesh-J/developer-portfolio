@@ -201,6 +201,14 @@ const certificatesData = {
       link: "https://drive.google.com/file/d/1A7OQbqzGw7b_DEJKUoXpvTHYkBgYwqfu/view",
     },
   ],
+  coursera: [
+    {
+      title: "Supervised Machine Learning: Regression and Classification",
+      image:
+        "img/My_Certificates/Coursera/Supervised_Machine_Learning_Regression_and_classification.jpg",
+      link: "https://drive.google.com/file/d/1uYDc5im4zKxDDPDF0mfWcAucGWAPzE3Z/view",
+    },
+  ],
   internship: [
     {
       title: "MERN Stack Developer Intern",

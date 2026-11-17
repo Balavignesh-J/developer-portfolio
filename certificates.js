@@ -34,12 +34,12 @@ const certificatesData = {
     },
     {
       title: "PROGRAMMING WITH GENERATIVE AI",
-      image: "img\My_Certificates\NPTEL\PROGRAMMING WITH GENERATIVE AI.jpg",
+      image: "img/My_Certificates/NPTEL/PROGRAMMING_WITH_GENERATIVE_AI.jpg",
       link: "https://drive.google.com/file/d/1_PbjxxnRVK3iwCO7_NUW9sQgfeLp8JC6/view",
     },
     {
       title: "Cloud Computing",
-      image: "img\My_Certificates\NPTEL\Cloud Computing.jpg",
+      image: "img/My_Certificates/NPTEL/Cloud_Computing.jpg",
       link: "https://drive.google.com/file/d/1rt-T9huM4j1K9x_9v4hOMm3wMzwg4T6m/view",
     },
     {
